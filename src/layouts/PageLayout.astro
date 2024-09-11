@@ -1,0 +1,40 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+
+const { meta } = Astro.props;
+
+// Define default header data here
+const defaultHeaderData = {
+  links: [
+    { text: 'Početna', href: '/' },
+    { text: 'O nama', href: '/o-nama' },
+    { text: 'Usluge', href: '/usluge' },
+    { text: 'Cenovnik', href: '/pricing' },
+    { text: 'Kontakt', href: '/kontakt' },
+  ],
+};
+
+// Define default footer data here
+const defaultFooterData = {
+  // Add your footer data structure here
+};
+---
+
+<Layout {meta}>
+  <Header {...defaultHeaderData} />
+  <main>
+    <slot />
+  </main>
+  <Footer {...defaultFooterData} />
+</Layout>
+
+<style>
+  main > :global(section) {
+    margin-bottom: 0;
+  }
+  main > :global(section:not(:first-child)) {
+    margin-top: 0;
+  }
+</style>

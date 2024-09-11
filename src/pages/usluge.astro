@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Naše usluge - MJ Social Media',
+};
+---
+
+<Layout metadata={metadata}>
+  <Features
+    id="usluge"
+    title="Naše usluge"
+    subtitle="Sveobuhvatna rešenja za društvene mreže koja će uzdići vaš brend"
+    items={[
+      {
+        title: 'Razvoj strategije',
+        description: 'Kreiramo prilagođene strategije za društvene mreže koje su usklađene sa vašim poslovnim ciljevima i ciljnom publikom.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Kreiranje sadržaja',
+        description: 'Proizvodimo visokokvalitetan, angažujući sadržaj koji rezonuje sa vašom publikom i promoviše vaš brend.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Upravljanje zajednicom',
+        description: 'Aktivno angažujemo vašu publiku, gradimo odnose i upravljamo reputacijom vašeg brenda na mreži.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Plaćeno oglašavanje',
+        description: 'Kreiramo i optimizujemo ciljane reklamne kampanje za maksimalni ROI na platformama društvenih mreža.',
+        icon: 'tabler:ad',
+      },
+      {
+        title: 'Analitika i izveštavanje',
+        description: 'Pružamo detaljne uvide i izveštaje o performansama vaših kampanja na društvenim mrežama.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Saradnja sa influenserima',
+        description: 'Identifikujemo i sarađujemo sa relevantnim influenserima kako bismo proširili doseg vašeg brenda.',
+        icon: 'tabler:star',
+      },
+    ]}
+  />
+
+  <!-- Rest of the content remains the same -->
+</Layout>
