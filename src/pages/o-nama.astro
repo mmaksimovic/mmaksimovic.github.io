@@ -1,18 +1,29 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Team from '~/components/widgets/Team.astro';
 
 const metadata = {
   title: 'O nama - MJ Social Media',
 };
 ---
 
-<Layout {metadata}>
-  <Hero
-    title="O nama"
-    subtitle="Saznajte više o MJ Social Media timu i našoj misiji"
-  />
-  
-  <!-- Rest of your content -->
+<Layout metadata={metadata}>
+  <Content
+    title="O MJ Social Media"
+    subtitle="Vaš partner za uspeh na društvenim mrežama"
+    image={{
+      src: '~/assets/images/o-nama.jpg',
+      alt: 'Tim MJ Social Media',
+    }}
+  >
+    <Fragment slot="content">
+      MJ Social Media je tu za vas u svakom trenutku. Posvećeni smo pružanju inovativnih i efikasnih rešenja za društvene mreže koja pomažu brendovima da se istaknu u digitalnom prostoru.
+
+      Sa više od 5 godina iskustva u industriji, razumemo jedinstvene izazove i mogućnosti koje društvene mreže pružaju. Naš pristup je zasnovan na podacima, kreativan i prilagođen specifičnim potrebama svakog klijenta.
+    </Fragment>
+  </Content>
+
+  <!-- Rest of the content remains the same -->
 </Layout>
