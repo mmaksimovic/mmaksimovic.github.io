@@ -22,12 +22,12 @@ const defaultFooterData = {
 };
 ---
 
-<Layout {meta}>
+<Layout meta={meta}>
   <Header {...defaultHeaderData} />
   <main>
     <slot />
   </main>
-  <Footer {...defaultFooterData} />
+  <Footer links={[]} secondaryLinks={[]} socialLinks={[]} />
 </Layout>
 
 <style>
