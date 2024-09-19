@@ -104,10 +104,14 @@ const {
 </style>
 
 <script>
-  const toggleMenu = document.querySelector('.toggle-menu');
-  const nav = document.querySelector('nav');
-
-  toggleMenu.addEventListener('click', () => {
-    nav.classList.toggle('is-active');
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleMenu = document.querySelector('.toggle-menu');
+    const nav = document.querySelector('nav');
+    
+    if (toggleMenu && nav) {
+      toggleMenu.addEventListener('click', () => {
+        nav.classList.toggle('is-active');
+      });
+    }
   });
 </script>

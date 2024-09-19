@@ -28,7 +28,7 @@ const {
           {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300">{subtitle}</p>}
         </div>
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 action-buttons">
-          {actions && actions.map((action) => (
+          {Array.isArray(actions) && actions.map((action: any) => (
             <div class="flex w-full sm:w-auto">
               <Button {...action} class="w-full sm:mb-0" />
             </div>
