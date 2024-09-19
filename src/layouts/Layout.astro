@@ -38,16 +38,42 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback="swap" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <body class="antialiased text-gray-900 dark:text-slate-300 tracking-tight bg-white dark:bg-slate-900">
     <slot />
 
     <BasicScripts />
 
     <style is:global>
+      @media (max-width: 768px) {
+        html {
+          font-size: 14px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        /* Add more responsive typography as needed */
+      }
+
+      /* Ensure images don't overflow their containers */
       img {
-        content-visibility: auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Add some breathing room to containers on mobile */
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
     </style>
   </body>
