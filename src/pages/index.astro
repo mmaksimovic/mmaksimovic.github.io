@@ -1,23 +1,138 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
-  title: 'MJ Social Media - Profesionalni Social Media Marketing',
+  title: 'MJ Social Media - Najbolje strategije za društvene mreže u Srbiji',
+  description: 'Pružamo personalizovane strategije za social media marketing koje će pomoći vašem brendu da raste na mrežama kao što su Facebook, Instagram, i LinkedIn.',
 };
 ---
 
-<Layout {metadata}>
+<Layout metadata={metadata}>
   <Hero
     title="Profesionalni Social Media Marketing"
     subtitle="Unapredite vaše prisustvo na društvenim mrežama uz MJ Social Media"
+    text="Kreiramo angažujući sadržaj i digitalne strategije koje donose stvarne rezultate na društvenim mrežama kao što su Facebook, Instagram, LinkedIn i više."
     actions={[
-      { text: 'Započnite saradnju odmah', href: '#', variant: 'primary' },
-      { text: 'Saznajte više o našim uslugama', href: '#' },
+      { 
+        variant: 'primary', 
+        text: 'Započnite saradnju odmah', 
+        href: 'https://www.linkedin.com/in/milica-jovanovi%C4%87-372693240/',
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      },
+      { text: 'Saznajte više o našim uslugama', href: '#usluge' },
     ]}
-    image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/hero.jpg', alt: 'Social Media Marketing - MJ Social Media' }}
   />
-  
-  <!-- Rest of your content -->
+
+  <Features
+    id="usluge"
+    title="Usluge društvenih mreža"
+    subtitle="Kompletna rešenja za društvene mreže – od strategije do realizacije"
+    items={[
+      {
+        title: 'Razvoj strategije društvenih mreža',
+        description: 'Personalizovane strategije usklađene sa vašim poslovnim ciljevima za sve platforme društvenih mreža.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Kreiranje sadržaja za društvene mreže',
+        description: 'Kreativni i privlačni vizuali, video i tekstualni sadržaj koji rezonuje sa vašom ciljnom publikom.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Upravljanje zajednicom',
+        description: 'Aktivno angažovanje sa vašom publikom i izgradnja lojalnosti kroz svakodnevnu interakciju.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Plaćeno oglašavanje na društvenim mrežama',
+        description: 'Ciljane kampanje na Facebooku, Instagramu i LinkedInu za maksimalan ROI.',
+        icon: 'tabler:ad',
+      },
+      {
+        title: 'Analitika i izveštavanje u social media marketingu',
+        description: 'Detaljna analitika i uvidi koji vam pomažu da kontinuirano optimizujete rezultate.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Saradnja sa influenserima',
+        description: 'Povezivanje sa relevantnim influenserima kako biste proširili domet svog brenda.',
+        icon: 'tabler:star',
+      },
+    ]}
+    classes={{ container: 'pt-4 md:pt-8' }}
+  />
+
+  <Content
+    isReversed
+    tagline="Naš pristup marketingu na društvenim mrežama"
+    title="Data-driven pristup za uspešan marketing na društvenim mrežama"
+    items={[
+      {
+        title: 'Analiza ciljne publike',
+        description: 'Detaljno istraživanje i analiza ponašanja vaše publike kako bismo osigurali pravi pristup.',
+      },
+      {
+        title: 'Optimizacija strategija za društvene mreže',
+        description: 'Optimizovane strategije za maksimalno angažovanje na Facebooku, Instagramu, LinkedInu i drugim mrežama.',
+      },
+      {
+        title: 'Konzistentnost brenda na društvenim mrežama',
+        description: 'Osiguravamo doslednost vašeg brenda u komunikaciji na svim platformama.',
+      },
+      {
+        title: 'Praćenje najnovijih trendova u social media marketingu',
+        description: 'Pratimo aktuelne trendove kako bismo vaš sadržaj održali relevantnim i privlačnim.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/data-driven.jpg',
+      alt: 'Marketing zasnovan na podacima - Social Media Marketing',
+    }}
+  />
+
+  <Testimonials
+    title="Iskustva naših klijenata"
+    testimonials={[
+      {
+        testimonial: "Strategije tima MJ Social Media značajno su povećale našu prodaju i angažman na društvenim mrežama.",
+        name: 'Marija Jovanović',
+        job: 'CEO, TechStart',
+        image: { src: '~/assets/images/testimonials/marija.jpg', alt: 'Marija Jovanović - CEO TechStart' },
+      },
+      {
+        testimonial: "Sadržaj koji kreiraju za naš brend je fantastičan. Naša publika je oduševljena.",
+        name: 'Nikola Petrović',
+        job: 'Marketing direktor, ModniSvet',
+        image: { src: '~/assets/images/testimonials/nikola.jpg', alt: 'Nikola Petrović - Marketing direktor ModniSvet' },
+      },
+      {
+        testimonial: "Od kako smo angažovali MJ Social Media, rezultati naše kampanje na društvenim mrežama su sjajni.",
+        name: 'Ana Đorđević',
+        job: 'Osnivač, ZelenaHrana',
+        image: { src: '~/assets/images/testimonials/ana.jpg', alt: 'Ana Đorđević - Osnivač ZelenaHrana' },
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Spremni za rast vašeg brenda na društvenim mrežama?"
+    subtitle="Kontaktirajte nas danas kako bismo kreirali strategiju koja donese stvarne rezultate."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kontaktirajte nas',
+        href: 'https://www.linkedin.com/in/milica-jovanovi%C4%87-372693240/',
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      },
+    ]}
+  />
 </Layout>

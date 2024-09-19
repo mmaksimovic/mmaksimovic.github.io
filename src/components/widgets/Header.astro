@@ -2,7 +2,10 @@
 import { Icon } from 'astro-icon/components';
 import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
+import ToggleMenu from '~/components/common/ToggleMenu.astro';
+
 import { getHomePermalink } from '~/utils/permalinks';
+import { trimSlash, getAsset } from '~/utils/permalinks';
 
 interface Link {
   text?: string;
@@ -11,18 +14,34 @@ interface Link {
   icon?: string;
 }
 
+interface ActionLink extends Link {
+  type?: string;
+}
+
 interface MenuLink extends Link {
   links?: Array<Link>;
 }
 
 export interface Props {
   links?: Array<MenuLink>;
+  actions?: Array<ActionLink>;
+  isSticky?: boolean;
+  showToggleTheme?: boolean;
+  showRssFeed?: boolean;
+  position?: string;
 }
 
-const { links = [] } = Astro.props;
+const {
+  links = [],
+  actions = [],
+  isSticky = false,
+  showToggleTheme = false,
+  showRssFeed = false,
+  position = 'center',
+} = Astro.props;
 ---
 
-<header class="sticky top-0 z-40 flex-none mx-auto w-full bg-white dark:bg-slate-900 border-b dark:border-b-0">
+<header class="sticky top-0 z-40 flex-none mx-auto w-full bg-white dark:bg-slate-900 md:backdrop-blur-sm border-b dark:border-b-0">
   <div class="py-3 px-3 mx-auto w-full md:flex md:justify-between max-w-7xl md:px-4">
     <div class="flex justify-between">
       <a class="flex items-center" href={getHomePermalink()}>
@@ -30,21 +49,14 @@ const { links = [] } = Astro.props;
       </a>
       <div class="flex items-center md:hidden">
         <ToggleTheme />
-        <button
-          type="button"
-          class="ml-1.5 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center transition"
-          aria-label="Toggle Menu"
-          data-toggle-menu
-        >
-          <Icon name="tabler:menu" class="w-6 h-6" />
-        </button>
+        <ToggleMenu />
       </div>
     </div>
     <nav
-      id="menu-items"
-      class="items-center w-full md:w-auto hidden md:flex text-gray-600 dark:text-slate-200 h-screen md:h-auto"
+      class="items-center w-full md:w-auto hidden md:flex text-gray-600 dark:text-slate-200 h-screen md:h-auto overflow-y-auto md:overflow-visible md:mx-5"
+      aria-label="Main navigation"
     >
-      <ul class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto text-xl md:text-base">
+      <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-base md:mx-auto">
         {links.map((link) => (
           <li>
             <a
@@ -62,35 +74,43 @@ const { links = [] } = Astro.props;
 
 <style>
   @media (max-width: 768px) {
-    #menu-items {
-      display: none;
-      position: absolute;
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
       right: 0;
-      top: 100%;
-      width: 100%;
-      background-color: white;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    #menu-items.flex {
+      bottom: 0;
+      background: white;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav.is-active {
+      transform: translateX(0);
+    }
+
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav li {
+      margin: 1rem 0;
     }
   }
 </style>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    const toggleMenu = document.querySelector('[data-toggle-menu]');
-    const menuItems = document.querySelector('#menu-items');
-
-    if (toggleMenu) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleMenu = document.querySelector('.toggle-menu');
+    const nav = document.querySelector('nav');
+    
+    if (toggleMenu && nav) {
       toggleMenu.addEventListener('click', () => {
-        if (menuItems) {
-          menuItems.classList.toggle('hidden');
-          menuItems.classList.toggle('flex');
-        }
+        nav.classList.toggle('is-active');
       });
     }
   });
