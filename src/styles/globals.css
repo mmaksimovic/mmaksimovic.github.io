@@ -24,8 +24,6 @@
     --black: rgb(0, 0, 0);
     --dark: #191a23;
     --white: #f3f3f3;
-    --teal: rgb(0, 128, 128);
-    --aquamarin: rgb(127,255,212);
   }
 
   @layer base {

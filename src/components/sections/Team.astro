@@ -4,7 +4,7 @@ import TeamCard from "../ui/TeamCard.astro";
 import Section from "./Section.astro";
 
 const description =
-  "Meet the skilled and experienced tim behind our successful digital marketing strategies";
+  "Meet the skilled and experienced team behind our successful digital marketing strategies";
 
 import {
   default as p1,
@@ -15,7 +15,7 @@ import {
   default as p6,
 } from "../../assets/pics/profile-pic.png";
 
-const tim = [
+const team = [
   {
     pic: p1,
     name: "Maria Katz",
@@ -74,7 +74,7 @@ const tim = [
       class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
     >
       {
-        tim.map((member, index) => (
+        team.map((member, index) => (
           <TeamCard
             key={index}
             pic={member.pic}
@@ -87,7 +87,7 @@ const tim = [
       }
     </div>
     <div class="flex justify-end mt-10">
-      <button class="btn-primary">See all tim</button>
+      <button class="btn-primary">See all team</button>
     </div>
   </div>
 </Section>
