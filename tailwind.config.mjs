@@ -15,6 +15,8 @@ export default {
         black: "var(--black)",
         dark: "var(--dark)",
         white: "var(--white)",
+        teal: "var(--teal)",
+        aquamarin:"var(--aquamarin)"
       },
     },
   },
