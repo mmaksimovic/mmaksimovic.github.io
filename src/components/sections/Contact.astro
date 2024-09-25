@@ -1,5 +1,5 @@
 ---
-import Form from "../ui/Form.astro";
+import ContactForm from "../ContactForm.jsx"; // Import the React form component
 import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
 ---
@@ -10,6 +10,7 @@ import Section from "./Section.astro";
       sectionTitle="Contact Us"
       description="Connect with Us: Let's Discuss Your Digital Marketing Needs"
     />
-    <Form />
+    <!-- Use the React form instead of the old Astro form -->
+    <ContactForm client:load />
   </div>
 </Section>
