@@ -4,10 +4,10 @@ title: 'Zašto je prisustvo na društvenim mrežama ključno za male biznise'
 pubDate: 2023-07-15
 description: 'Otkrijte kako društvene mreže mogu transformisati vaš mali biznis, povećati vidljivost i privući nove klijente.'
 image: 
-    url: '/images/presence.webp'
+    url: '/images/video.webp'
     alt: 'Mali biznis koji koristi društvene mreže'
 author: 'Milica Jovanović'
-tags: ["društvene mreže", "mali biznis", "digitalni marketing", "online prisustvo"]
+tags: ["video sadržaj", "društvene mreže", "mali biznis", "digitalni marketing", "online prisustvo"]
 ---
 
 # Zašto je prisustvo na društvenim mrežama važno za male biznise

@@ -7,7 +7,7 @@ image:
     url: '/images/presence.webp'
     alt: 'Mali biznis koji koristi društvene mreže'
 author: 'Milica Jovanović'
-tags: ["društvene mreže", "mali biznis", "digitalni marketing", "online prisustvo"]
+tags: ["društvene mreže", "digitalni marketing", "online prisustvo"]
 ---
 
 # Kako izgraditi uspešnu strategiju za društvene mreže (i zašto je video sadržaj ključan)
