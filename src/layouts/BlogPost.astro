@@ -1,39 +1,89 @@
 ---
-import Layout from './Layout.astro';  // Add this import
+import MainLayout from './MainLayout.astro';
 import { Image } from 'astro:assets';
-import { getImage } from 'astro:assets';
 
 const { frontmatter } = Astro.props;
 
-let imageSource;
+// Import all images from the assets folder
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/**/*.{jpeg,jpg,png,gif,webp}');
+
+// Find the correct image based on the frontmatter URL
+let imageSource: ImageMetadata | undefined;
 if (frontmatter.image?.url) {
-  try {
-    imageSource = (await import(`../assets${frontmatter.image.url}`)).default;
-  } catch (error) {
-    console.error(`Failed to import image: ${error}`);
+  const imagePath = `../assets${frontmatter.image.url}`;
+  const imageModule = images[imagePath];
+  if (imageModule) {
+    imageSource = (await imageModule()).default;
   }
 }
 ---
 
-<Layout title={frontmatter.title}>
-  <article class="max-w-3xl mx-auto px-4 py-8">
+<MainLayout title={frontmatter.title}>
+  <article class="max-w-3xl mx-auto px-4 pt-32 pb-16"> <!-- Increased top padding -->
     {imageSource && (
       <Image 
-        src={imageSource} 
+        src={imageSource}
         alt={frontmatter.image.alt || ''} 
-        class="w-full h-auto mb-8 rounded-lg shadow-md"
+        width={800}
+        height={400}
+        class="w-full h-auto mb-12 rounded-lg shadow-md object-cover"
       />
     )}
-    <h1 class="text-4xl font-bold mb-4">{frontmatter.title}</h1>
-    <div class="text-gray-600 mb-6">
+    <h1 class="text-4xl font-bold mb-6">{frontmatter.title}</h1>
+    <div class="text-gray-600 mb-8">
       <time datetime={frontmatter.pubDate} class="mr-4">
         {new Date(frontmatter.pubDate).toLocaleDateString('sr-RS', { year: 'numeric', month: 'long', day: 'numeric' })}
       </time>
       <span>Autor: {frontmatter.author}</span>
     </div>
-    <p class="text-xl italic mb-8">{frontmatter.description}</p>
+    <p class="text-xl italic mb-12">{frontmatter.description}</p>
     <div class="prose prose-lg max-w-none">
       <slot />
     </div>
   </article>
-</Layout>
+</MainLayout>
+
+<style is:global>
+  .prose {
+    @apply text-gray-900 leading-relaxed;
+  }
+  .prose h2 {
+    @apply text-3xl font-semibold mt-12 mb-6;
+  }
+  .prose h3 {
+    @apply text-2xl font-semibold mt-10 mb-4;
+  }
+  .prose p {
+    @apply mb-6;
+  }
+  .prose ul, .prose ol {
+    @apply mb-6 pl-6;
+  }
+  .prose ul {
+    @apply list-disc;
+  }
+  .prose ol {
+    @apply list-decimal;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose li::marker {
+    @apply text-gray-400;
+  }
+  .prose a {
+    @apply text-blue-600 hover:underline;
+  }
+  .prose blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic my-6;
+  }
+  .prose code {
+    @apply bg-gray-100 rounded px-1 py-0.5;
+  }
+  .prose pre {
+    @apply bg-gray-100 rounded p-4 overflow-x-auto my-6;
+  }
+  .prose img {
+    @apply rounded-lg shadow-md my-8;
+  }
+</style>

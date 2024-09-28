@@ -3,11 +3,19 @@ import Footer from "../components/ui/Footer.astro";
 import Navbar from "../components/ui/Navbar.astro";
 import MainHead from "./MainHead.astro";
 
-const { ...props } = Astro.props;
+const { title, description } = Astro.props;
+
+const navLinks = [
+  { name: "O nama", href: "/#about" },
+  { name: "Usluge", href: "/#services" },
+  { name: "Iskustva", href: "/#testimonials" },
+  { name: "Blog", href: "/blog" },
+  { name: "Kontakt", href: "/#contact" },
+];
 ---
 
 <html lang="en">
-  <MainHead {...props} />
+  <MainHead {title} {description} />
   <style>
     html.lenis {
       height: auto;
@@ -24,10 +32,10 @@ const { ...props } = Astro.props;
   </style>
   <script src="../utils/lenis"></script>
   <body>
+    <Navbar {navLinks} />
     <main>
-      <Navbar />
       <slot />
-      <Footer />
     </main>
+    <Footer />
   </body>
 </html>

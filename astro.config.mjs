@@ -13,4 +13,7 @@ export default defineConfig({
     sitemap(),
     mdx()  // Change this line
   ],
+  content: {
+    sources: ['src/content']
+  }
 });
