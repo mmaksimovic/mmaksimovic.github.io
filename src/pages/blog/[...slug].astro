@@ -25,14 +25,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await Astro.glob<BlogPostFile>('./*.md');
   
   return posts.map((post) => ({
-    params: { slug: post.frontmatter.slug || post.file.split('/').pop()?.split('.').shift() || '' },
-    props: { frontmatter: post.frontmatter, Content: post.Content },
+    params: { 
+      slug: post.file.split('/').pop()?.split('.').shift() || '' 
+    },
+    props: { post },
   }));
 }
 
-const { frontmatter, Content } = Astro.props;
+const { post } = Astro.props;
+const { Content } = post;
 ---
 
-<BlogPost frontmatter={frontmatter}>
+<BlogPost frontmatter={post.frontmatter}>
   <Content />
 </BlogPost>
