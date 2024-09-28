@@ -1,16 +1,16 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";  // Import React integration
+import react from "@astrojs/react";
 import sitemap from '@astrojs/sitemap';
-import markdown from '@astrojs/markdown-remark';
+import mdx from '@astrojs/mdx';  // Change this import
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://kljucnarec.rs", // Replace with your site's URL
+  site: "https://kljucnarec.rs",
   integrations: [
     tailwind({ configFile: "./tailwind.config.mjs" }),
-    react(),  // Add React integration
+    react(),
     sitemap(),
-    markdown()
+    mdx()  // Change this line
   ],
 });
