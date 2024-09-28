@@ -1,0 +1,39 @@
+---
+import Layout from './Layout.astro';
+import { Image } from 'astro:assets';
+
+const { frontmatter } = Astro.props;
+
+// Use a dynamic import for the image
+let imageImport;
+if (frontmatter.image?.url) {
+  try {
+    imageImport = await import(`../assets${frontmatter.image.url}`);
+  } catch (error) {
+    console.error(`Failed to import image: ${error}`);
+  }
+}
+---
+
+<Layout title={frontmatter.title}>
+  <article class="max-w-3xl mx-auto px-4 py-8">
+    {imageImport && (
+      <Image 
+        src={imageImport.default}
+        alt={frontmatter.image.alt} 
+        class="w-full h-auto mb-8 rounded-lg shadow-md"
+      />
+    )}
+    <h1 class="text-4xl font-bold mb-4">{frontmatter.title}</h1>
+    <div class="text-gray-600 mb-6">
+      <time datetime={frontmatter.pubDate} class="mr-4">
+        {new Date(frontmatter.pubDate).toLocaleDateString('sr-RS', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+      <span>Autor: {frontmatter.author}</span>
+    </div>
+    <p class="text-xl italic mb-8">{frontmatter.description}</p>
+    <div class="prose prose-lg max-w-none">
+      <slot />
+    </div>
+  </article>
+</Layout>
