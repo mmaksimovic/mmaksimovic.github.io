@@ -126,3 +126,46 @@
     }
   }
 }
+
+/* Blog styles */
+.blog-post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blog-post h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.blog-post .meta {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 1em;
+}
+
+.blog-post img {
+  max-width: 100%;
+  height: auto;
+}
+
+.blog-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.blog-list li {
+  margin-bottom: 1em;
+}
+
+.blog-list a {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #333;
+}
+
+.blog-list time {
+  font-size: 0.9em;
+  color: #666;
+}
