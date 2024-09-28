@@ -1,14 +1,14 @@
 ---
-import Layout from './Layout.astro';
+import Layout from './Layout.astro';  // Add this import
 import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
 
 const { frontmatter } = Astro.props;
 
-// Use a dynamic import for the image
-let imageImport;
+let imageSource;
 if (frontmatter.image?.url) {
   try {
-    imageImport = await import(`../assets${frontmatter.image.url}`);
+    imageSource = (await import(`../assets${frontmatter.image.url}`)).default;
   } catch (error) {
     console.error(`Failed to import image: ${error}`);
   }
@@ -17,10 +17,10 @@ if (frontmatter.image?.url) {
 
 <Layout title={frontmatter.title}>
   <article class="max-w-3xl mx-auto px-4 py-8">
-    {imageImport && (
+    {imageSource && (
       <Image 
-        src={imageImport.default}
-        alt={frontmatter.image.alt} 
+        src={imageSource} 
+        alt={frontmatter.image.alt || ''} 
         class="w-full h-auto mb-8 rounded-lg shadow-md"
       />
     )}
