@@ -26,14 +26,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   
   return posts.map((post) => ({
     params: { slug: post.frontmatter.slug || post.file.split('/').pop()?.split('.').shift() || '' },
-    props: { post },
+    props: { frontmatter: post.frontmatter, Content: post.Content },
   }));
 }
 
-const { post } = Astro.props;
-const { Content } = post;
+const { frontmatter, Content } = Astro.props;
 ---
 
-<BlogPost frontmatter={post.frontmatter}>
+<BlogPost frontmatter={frontmatter}>
   <Content />
 </BlogPost>
