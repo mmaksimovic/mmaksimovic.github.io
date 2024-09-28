@@ -1,31 +1,9 @@
 ---
 import { Image } from "astro:assets";
-
-const navLinks = [
-  {
-    name: "O nama",
-    href: "#about",
-  },
-  {
-    name: "Usluge",
-    href: "#services",
-  },
-  {
-    name: "Iskustva",
-    href: "#testimonials",
-  },
-  {
-    name: "Blog",  // Add this new link
-    href: "/blog", // Add this new link
-  },
-  {
-    name: "Kontakt",
-    href: "#contact",
-  },
-];
-
 import bars from "../../assets/bars.svg";
 import brand from "../../assets/brand.svg";
+
+const { navLinks } = Astro.props;
 ---
 
 <div
@@ -39,7 +17,7 @@ import brand from "../../assets/brand.svg";
   >
     <!-- Brand -->
     <div class="pl-4 xl:flex-none">
-      <a href="#home">
+      <a href="/">
         <Image src={brand} alt="Brand Logo" class="w-[219px]" loading="eager" />
       </a>
     </div>
@@ -52,21 +30,23 @@ import brand from "../../assets/brand.svg";
       <!-- Nav Links -->
       <ul class="xl:flex xl:flex-grow xl:justify-center xl:gap-10">
         {
-          navLinks.map((link) => {
-            return (
-              <li class="mx-4 p-4 xl:mx-0 px-0">
-                <a id={link.name} href={link.href} class="block">
-                  {link.name}
-                </a>
-              </li>
-            );
-          })
+          navLinks.map((link: { name: string; href: string }) => (
+            <li class="mx-4 p-4 xl:mx-0 xl:px-0">
+              <a 
+                id={link.name} 
+                href={link.href} 
+                class="block text-lg font-medium hover:text-aquamarin transition-colors"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
         }
       </ul>
 
       <!-- Login -->
       <div class="flex xl:flex-row xl:items-center px-4 xl:gap-4 flex-col">
-        <button class="btn-secondary">Request a quote</button>
+        <button class="btn-secondary text-lg">Request a quote</button>
       </div>
     </div>
 
@@ -83,6 +63,7 @@ import brand from "../../assets/brand.svg";
     </button>
   </nav>
 </div>
+
 <script>
   document.addEventListener("DOMContentLoaded", (_) => {
     const menuButton = document.getElementById("menuButton");

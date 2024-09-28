@@ -1,10 +1,10 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
 const allPosts = await Astro.glob('./*.md');
 ---
 
-<Layout title="Blog">
-  <div class="max-w-3xl mx-auto px-4 py-8">
+<MainLayout title="Blog">
+  <div class="max-w-3xl mx-auto px-4 pt-32 pb-16"> <!-- Increased top padding -->
     <h1 class="text-4xl font-bold mb-8">Moj Blog</h1>
     <p class="text-xl mb-8">Dobrodošli na moj blog. Ovde ćete pronaći moje najnovije objave.</p>
     <ul class="space-y-8">
@@ -21,4 +21,4 @@ const allPosts = await Astro.glob('./*.md');
       ))}
     </ul>
   </div>
-</Layout>
+</MainLayout>
