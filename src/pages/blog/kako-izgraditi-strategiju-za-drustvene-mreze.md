@@ -4,13 +4,11 @@ title: 'Kako izgraditi uspešnu strategiju za društvene mreže (i zašto je vid
 pubDate: 2023-07-15
 description: 'Saznajte kako da kreirate uspešnu strategiju za društvene mreže i zašto je video sadržaj ključan za povećanje angažovanja i vidljivosti vašeg brenda.'
 image: 
-    url: '/images/presence.webp'
+    url: '/images/video.webp'
     alt: 'Mali biznis koji koristi društvene mreže'
 author: 'Milica Jovanović'
 tags: ["društvene mreže", "mali biznis", "digitalni marketing", "online prisustvo"]
 ---
-
-# Kako izgraditi uspešnu strategiju za društvene mreže (i zašto je video sadržaj ključan)
 
 Društvene mreže su danas postale neizostavan deo marketinga za svaki biznis, bilo da ste mala lokalna radnja ili veliki brend. Ali, da biste izgradili prisustvo na mrežama koje donosi rezultate, potrebna je jasna strategija. Ključ uspeha leži u pravom sadržaju, doslednosti i – verovali ili ne – video sadržaju.
 

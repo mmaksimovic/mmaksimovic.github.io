@@ -10,8 +10,6 @@ author: 'Milica Jovanović'
 tags: ["društvene mreže", "mali biznis", "digitalni marketing", "online prisustvo"]
 ---
 
-# Zašto je prisustvo na društvenim mrežama važno za male biznise
-
 U današnje vreme, ako vaš mali biznis nije prisutan na društvenim mrežama, kao da vas nema. To više nije nešto što možete da ignorišete – društvene mreže su postale ključan deo svake strategije rasta. Bilo da imate lokalnu pekaru, kozmetički salon, ili pružate bilo koju uslugu, biti aktivan na društvenim mrežama može napraviti ogromnu razliku u privlačenju novih klijenata i izgradnji odnosa sa postojećima.
 
 ## Kako društvene mreže pomažu vašem malom biznisu da raste?
