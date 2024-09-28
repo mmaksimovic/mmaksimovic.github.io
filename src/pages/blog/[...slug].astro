@@ -32,7 +32,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
 }
 
-const { post } = Astro.props;
+interface Props {
+  post: BlogPostFile;
+}
+
+const { post } = Astro.props as Props;
 const { Content } = post;
 ---
 
