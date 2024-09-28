@@ -61,7 +61,7 @@ const ContactForm = () => {
             value="Say Hi" 
             checked={formData.purpose === 'Say Hi'}
             onChange={handleChange}
-            className="form-checkbox text-green-500" 
+            className="form-checkbox text-aquamarin-500" 
           />
           <label htmlFor="sayHi" className="text-gray-700 font-medium">Say Hi</label>
         </div>
@@ -73,7 +73,7 @@ const ContactForm = () => {
             value="Get a Quote" 
             checked={formData.purpose === 'Get a Quote'}
             onChange={handleChange}
-            className="form-checkbox text-green-500" 
+            className="form-checkbox text-aquamarin-500" 
           />
           <label htmlFor="getQuote" className="text-gray-700 font-medium">Get a Quote</label>
         </div>
@@ -88,7 +88,7 @@ const ContactForm = () => {
           value={formData.name}
           onChange={handleChange}
           placeholder="Your name"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-green-500 transition duration-300"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-aquamarin-500 transition duration-300"
           required
         />
       </div>
@@ -102,7 +102,7 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           placeholder="your@email.com"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-green-500 transition duration-300"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-aquamarin-500 transition duration-300"
           required
         />
       </div>
@@ -115,7 +115,7 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           placeholder="Your message here..."
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-green-500 transition duration-300 h-32 resize-none"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-aquamarin-500 transition duration-300 h-32 resize-none"
           required
         ></textarea>
       </div>
