@@ -64,7 +64,7 @@ Korišćenje društvenih mreža vam omogućava da pratite šta vaša konkurencij
 - Otkrijte praznine na tržištu koje možete da popunite.
 - Ostanite u toku sa trendovima u vašoj industriji i uvek pokušavajte da budete korak ispred.
 
-## Zaključak
+## Mi smo tu da pomognemo!
 
 Prisustvo na društvenim mrežama više nije opcija - to je neophodnost za male biznise koji žele da rastu i napreduju u digitalnom svetu. Uložite vreme i resurse u izgradnju jake strategije za društvene mreže i videćete rezultate – od povećane vidljivosti, preko angažovanih pratilaca, do porasta prodaje. 
 

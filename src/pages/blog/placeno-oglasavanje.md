@@ -28,6 +28,6 @@ Jedan od najefikasnijih aspekata plaćenog oglašavanja je mogućnost personaliz
 
 Agencija **Ključna Reč** nudi prilagođene strategije za plaćeno oglašavanje na društvenim mrežama. Pomažemo malim biznisima da definišu svoje ciljne grupe, kreiraju efektivne oglase i optimizuju kampanje za najbolje rezultate. Naš tim prati trendove i promene u algoritmima društvenih mreža kako bi vaš budžet bio maksimalno iskorišćen.
 
-## Zaključak
+## Mi smo tu da pomognemo!
 
 Plaćeno oglašavanje na društvenim mrežama je alat koji vam omogućava da brzo i efikasno povećate vidljivost svog biznisa. Bez obzira na to koliko je vaš biznis mali, uz pametno postavljene oglase, možete postići veliki rast. Ako želite da saznate više o tome kako vam možemo pomoći u vođenju uspešnih kampanja, javite nam se – tu smo da pomognemo!

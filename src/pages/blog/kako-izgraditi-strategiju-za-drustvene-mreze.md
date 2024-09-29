@@ -69,7 +69,7 @@ Priče su moćan alat za povezivanje sa publikom. Koristite video da ispričate 
 
 Uvek se zapitajte: "Kako ovaj video pomaže mojoj publici?" Edukativni, inspirativni ili zabavni videi donose najviše rezultata. Razmislite o tutorijalima, demo snimcima ili "iza kulisa" sadržaju.
 
-## Zaključak
+## Javite nam se!
 
 Uključivanje video sadržaja u vašu strategiju za društvene mreže nije samo opcija – to je ključ uspeha. Video sadržaj donosi više angažovanja, privlači pažnju i pomaže vam da ostanete ispred konkurencije. Sada je pravo vreme da počnete, bilo da snimate kratke snimke za Instagram ili duže tutorijale za YouTube.
 

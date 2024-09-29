@@ -4,72 +4,71 @@ import TeamCard from "../ui/TeamCard.astro";
 import Section from "./Section.astro";
 
 const description =
-  "Meet the skilled and experienced tim behind our successful digital marketing strategies";
+  "Upoznajte naš iskusni tim";
 
-import {
-  default as p1,
-  default as p2,
-  default as p3,
-  default as p4,
-  default as p5,
-  default as p6,
-} from "../../assets/pics/profile-pic.png";
+import p1 from "../../assets/pics/profile-pic.png";
+import p2 from "../../assets/pics/profile-pic.png";  
+import p3 from "../../assets/pics/profile-pic.png";
+import p4 from "../../assets/pics/profile-pic.png";
+import p5 from "../../assets/pics/profile-pic.png";
+import p6 from "../../assets/pics/profile-pic2.png"; // Maza
 
 const tim = [
   {
     pic: p1,
-    name: "Maria Katz",
-    role: "CEO",
+    name: "Milica Jovanović",
+    role: "Kreativni direktor",
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
-  },
-  {
-    pic: p2,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
-  },
-  {
-    pic: p3,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
-  },
-  {
-    pic: p4,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+      "Odgovorna za osmišljavanje kreativnih koncepata i strategija. Razvijam inovativne ideje koje vaš brend izdvajaju iz mase. Sa mnom, vaša kampanja nikada neće biti dosadna!",
     link: "https://linkedin.com",
   },
   {
     pic: p5,
-    name: "Maria Katz",
-    role: "CEO",
+    name: "Milica Jovanović",
+    role: "Grafički dizajner i video editor",
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+      "Kreiram vizualne sadržaje koji pričaju vašu priču. Bilo da se radi o atraktivnim grafičkim dizajnima ili dinamičnim video montažama, osiguravam da vaša poruka bude preneta na upečatljiv i kreativan način.",
     link: "https://linkedin.com",
   },
   {
-    pic: p6,
-    name: "Maria Katz",
-    role: "CEO",
+    pic: p3,
+    name: "Milica Jovanović",
+    role: "Stručnjak za SEO",
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analys",
+      "Pomažem vašem sajtu da se probije na prvu stranicu pretrage. Optimizacija sadržaja i tehnički SEO su mi specijalnost — vaš online uspeh je moj prioritet.",
     link: "https://linkedin.com",
   },
+  {
+    pic: p4,
+    name: "Milica Jovanović",
+    role: "Analitičar za društvene mreže",
+    description:
+      "Pratim i analiziram performanse vaših društvenih mreža, pružajući uvid u ključne metrike i ponašanje publike. Koristeći podatke, razvijam strategije koje povećavaju angažovanje i optimizuju vaš prisustvo na mrežama.",
+  link: "https://linkedin.com",
+  },
+  {
+    pic: p5,
+    name: "Milica Jovanović",
+    role: "Stručnjak za oglašavanje",
+    description:
+      "Planiram i implementiram kampanje koje donose rezultate. Fokusirana sam na maksimizaciju povrata ulaganja (ROI) i kreiranje oglasa koji zaista dopiru do prave publike.",
+    link: "https://linkedin.com",
+  },
+  {
+  pic: p6,
+  name: "Maza",
+  role: "Kontrolor kvaliteta",
+  description:
+    "Nepogrešiva kada je reč o kvalitetu — ako nešto nije u skladu sa najvišim standardima, Maza reži! Svaka objava ili video prolazi njenu strogu proveru.",
+  link: "https://linkedin.com",
+}
+
 ];
 ---
 
 <Section id="about">
   <div class="mt-[140px]">
-    <SectionTitle sectionTitle="Team" description={description} />
+    <SectionTitle sectionTitle="Tim" description={description} />
     <div
       class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
     >
