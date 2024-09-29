@@ -1,14 +1,35 @@
 ---
 const slides = [
-  { index: 1, name: "John Johnson", description: "Marketing dierector at XYZ" },
-  { index: 2, name: "Ana Banana", description: "Marketing dierector at XYZ" },
+  {
+    index: 1,
+    name: "Realm Code",
+    description: "Startup advisory",
+    quote: "We have been working with Ključna Reč Digital for the past year and have seen a significant increase in social media engagement of our clients. Their team is professional and truly cares about our success."
+  },
+  {
+    index: 2,
+    name: "nuvo",
+    description: "B2B SaaS",
+    quote: "Milica’s technical videos on LinkedIn were a game changer for our niche audience, driving engagement and boosting visibility. She knows how to simplify complex ideas into clear, impactful content. Highly recommend her expertise!"
+  },
   {
     index: 3,
-    name: "Camilo Corintio",
-    description: "Marketing dierector at XYZ",
+    name: "Tamara",
+    description: "Jungle Pet",
+    quote: "Milica je jako kreativna i pristupačna osoba. Sama je osmislila scenario, dovela psa glumca, snimila video, i pomogla nam da se izdvojimo od konkurencije u kraju. Zahvaljujući njoj, naš pet shop je postao mnogo prepoznatljiviji. Preporučujemo je svakom ko želi kvalitetan sadržaj!"
   },
-  { index: 4, name: "Karla Kaz", description: "Marketing dierector at XYZ" },
-  { index: 5, name: "Johanna Jana", description: "Marketing dierector at XYZ" },
+  {
+    index: 4,
+    name: "Karla Kaz",
+    description: "E-commerce Manager at 123 Shop",
+    quote: "Their social media marketing strategies helped us build a strong community around our brand. Engagement rates soared, and so did our sales."
+  },
+  {
+    index: 5,
+    name: "Johanna Jana",
+    description: "Digital Strategist at Tech Innovators",
+    quote: "The analytics and tracking implemented by Ključna Reč Digital provided invaluable insights. We now make data-informed decisions that drive real results."
+  },
 ];
 ---
 
@@ -32,13 +53,7 @@ const slides = [
           aria-label={`${slide.index} / ${slides.length}`}
         >
           <div class="flex flex-col justify-center items-center py-[48px] px-6 sm:px-[52px]">
-            <p class="bubble">
-              "We have been working with Positivus for the past year and have
-              seen a significant increase in website traffic and leads as a
-              result of their efforts. The tim is professional, responsive, and
-              truly cares about the success of our business. We highly recommend
-              Positivus to any company looking to grow their online presence."
-            </p>
+            <p class="bubble">{slide.quote}</p>
           </div>
           <div class="w-full px-10 sm:px-20 ">
             <div class="text-aquamarin font-medium">{slide.name}</div>
@@ -50,26 +65,25 @@ const slides = [
   </div>
   <div class="flex justify-around lg:justify-center mb-[68px] lg:gap-[189px]">
     <div class="swiper-button-prev w-7 h-7 sm:w-10 sm:h-10">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-        ><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path
           fill="#ffffff"
           d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
-        ></path></svg
-      >
+        ></path>
+      </svg>
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-next w-7 h-7 sm:w-10 sm:h-10 rotate-180">
-      <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 448 512"
-        ><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+      <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 448 512">
         <path
           fill="#ffffff"
           d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
-        ></path></svg
-      >
+        ></path>
+      </svg>
     </div>
   </div>
 </div>
+
 <script>
   import "swiper/css";
   import "swiper/css/pagination";
@@ -107,6 +121,7 @@ const slides = [
     },
   });
 </script>
+
 <style>
   .bubble {
     position: relative;
