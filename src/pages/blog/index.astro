@@ -1,6 +1,11 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 const allPosts = await Astro.glob('./*.md');
+
+// Sort posts by publication date in descending order (newest first)
+const sortedPosts = allPosts.sort((a, b) => {
+  return new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime();
+});
 ---
 
 <MainLayout title="Blog">
@@ -8,7 +13,7 @@ const allPosts = await Astro.glob('./*.md');
     <h1 class="text-4xl font-bold mb-8">Moj Blog</h1>
     <p class="text-xl mb-8">Dobrodošli na moj blog. Ovde ćete pronaći moje najnovije objave.</p>
     <ul class="space-y-8">
-      {allPosts.map((post) => (
+      {sortedPosts.map((post) => (
         <li class="border-b pb-8">
           <a href={post.url} class="block">
             <h2 class="text-2xl font-semibold mb-2 hover:text-aquamarin transition-colors">{post.frontmatter.title}</h2>
