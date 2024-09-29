@@ -1,8 +1,19 @@
 {
-  "title": "Servicios de diseño y desarrollo de aplicaciones web",
-  "description": "Este sitio web es un portafolio de servicios de diseño y desarrollo de aplicaciones web. Aquí encontrarás información sobre los servicios que ofrecemos, los proyectos en los que hemos trabajado y cómo puedes contactarnos.",
+  "title": "Ključna Reč",
+  "description": "Agencija 'Ključna Reč' pomaže biznisima da se istaknu online sa uslugama kao što su SEO, plaćeni oglasi, marketing na društvenim mrežama i kreiranje sadržaja.",
   "image": {
-    "src": "https://master--kreatif-software.netlify.app/og.png",
-    "alt": "Imagen del logo de Kreatif Software"
+    "src": "https://kljucnarec.rs/og.png",
+    "alt": "Logo agencije Ključna Reč"
+  },
+  "url": "https://kljucnarec.rs",
+  "language": "sr-RS",
+  "author": {
+    "name": "Ključna Reč",
+    "email": "milica@kljucnarec.rs"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/kljucnarec",
+    "instagram": "https://www.instagram.com/kljucnarec.rs",
+    "linkedin": "https://www.linkedin.com/company/kljucnarec"
   }
 }

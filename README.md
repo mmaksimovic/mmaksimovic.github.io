@@ -1,57 +1,31 @@
-# ✨ Kreatif Software
+# Kljucna Rec
 
-**[Landing](https://kreatif-software.netlify.app/)**
+## Dodavanje novog blog posta
 
-Kreatif es una Landing page de alto desempeño hecha con Astro y Tailwind. Está basada en el diseño original de Figma hecho por [Olga Skuja](https://www.olgaskuja.design/).
+Da biste dodali novi blog post, sledite ove korake:
 
-## Features
+1. Kreirajte novi Markdown (.md) fajl u `src/pages/blog/` direktorijumu.
+2. Dodajte sledeći frontmatter na početku fajla:
 
-- Diseño limpio y simple.
-- Full Responsive.
-- Rápida y eficiente gracias a Astro.
-- Customizable con Tailwind.
-- SEO altamente optimizado.
-
-## ⚓ Puntaje en Lighthouse
-
-<p align="center">
-	<img width="600" alt="Lighthouse Score" src="https://raw.githubusercontent.com/vasquez-esteban/kreativ-software/master/lighthouse-score.svg"/>
-</p>
-
-## 🚀 Estructura del Proyecto
-
-```text
-/
-├── public/
-│   └── fonts
-│   └── favicon.svg
-│   └── og.png
-├── src/
-│   ├── components/
-│   │   └── sections/
-│   │   └── seo/
-│   │   └── ui/
-│   ├── styles/
-│   ├── utils/
-│   ├── layouts/
-│   │   └── MainHead.astro
-│   │   └── MainLayout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+---
+layout: ../../layouts/BlogPost.astro
+title: 'Naslov blog posta'
+pubDate: 2023-07-15
+description: 'Opis blog posta'
+image: 
+    url: '/images/placeholder.jpg'
+    alt: 'Placeholder image'
 ```
 
-## 🧞 Comandos
 
-Para correr la aplicación en un entorno local
+3. Ispod frontmatter-a, napišite sadržaj vašeg blog posta koristeći Markdown sintaksu.
 
-| Comando          | Acción                                       |
-| :--------------- | :------------------------------------------- |
-| `git clone repo` | Clonar Repositorio                           |
-| `cd repo`        | Entrar al directorio base                    |
-| `npm install`    | Instalar Dependencias                        |
-| `npm run dev`    | Correr el servidor local en `localhost:4321` |
+## Napomene
 
-## Más información
+- Obavezno postavite odgovarajuću sliku u `/public/images/` direktorijum pre nego što je referencirate u blog postu.
+- Datum (`pubDate`) treba da bude u formatu YYYY-MM-DD.
+- Tagovi su opcioni, ali pomažu u organizaciji i pretraživanju sadržaja.
 
-- Licencia y Crédito en el footer de la Landing Page.
+Za više informacija o korišćenju Astro-a za blog, posetite [Astro dokumentaciju](https://docs.astro.build/).
+

@@ -6,8 +6,6 @@ import Section from "./Section.astro";
 import c1 from "../../assets/pics/card-pic1.png";
 import c2 from "../../assets/pics/card-pic2.png";
 import c3 from "../../assets/pics/card-pic3.png";
-import c4 from "../../assets/pics/card-pic4.png";
-import c5 from "../../assets/pics/card-pic5.png";
 import c6 from "../../assets/pics/card-pic6.png";
 
 const cards = [
@@ -37,22 +35,6 @@ const cards = [
   },
   {
     index: 1,
-    titleTop: "Email",
-    titleBottom: "Marketing",
-    img: c4,
-    alt: "Email Marketing",
-    link: "https://google.com",
-  },
-  {
-    index: 2,
-    titleTop: "Kreiranje",
-    titleBottom: "sadržaja",
-    img: c5,
-    alt: "Kreiranje sadržaja",
-    link: "https://google.com",
-  },
-  {
-    index: 3,
     titleTop: "Analitika i",
     titleBottom: "praćenje",
     img: c6,
@@ -62,13 +44,13 @@ const cards = [
 ];
 
 const description =
-  "U agenciji 'Ključna Reč' nudimo razne usluge koje pomažu biznisima da rastu online. Evo šta možemo da uradimo za vas:";
+  "U agenciji 'Ključna Reč' nudimo razne usluge koje pomažu biznisima da poboljšaju svoje online prisustvo. Evo šta možemo da uradimo za vas:";
 ---
 
 <Section id="services">
-  <div class="mt-[140px] mb-5">
+  <div class="mt-20 mb-20">
     <SectionTitle sectionTitle="Usluge" description={description} />
-    <div class="grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
+    <div class="grid md:grid-cols-2 gap-10">
       {
         cards.map((card) => (
           <ServiceCard
