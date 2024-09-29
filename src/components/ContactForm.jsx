@@ -6,11 +6,12 @@ const ContactForm = () => {
     purpose: 'Pozdrav',
     name: '',
     email: '',
-    message: ''
+    message: '',
+    service: '' // New field for the dropdown
   });
 
   useEffect(() => {
-    if (formData.purpose === 'Zatraži ponudu') {
+    if (formData.purpose === 'Zakaži besplatnu konsultaciju') {
       setFormData(prev => ({...prev, message: "Zainteresovani smo za vaše usluge! Kontaktirajte nas."}));
     } else {
       setFormData(prev => ({...prev, message: ''}));
@@ -31,7 +32,7 @@ const ContactForm = () => {
       
       if (response.ok) {
         setStatus("Hvala na vašoj prijavi!");
-        setFormData({purpose: 'Pozdrav', name: '', email: '', message: ''});
+        setFormData({purpose: 'Pozdrav', name: '', email: '', message: '', service: ''});
       } else {
         setStatus("Ups! Došlo je do problema prilikom slanja forme.");
       }
@@ -41,9 +42,9 @@ const ContactForm = () => {
   };
       
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type } = e.target;
     if (type === 'checkbox') {
-      setFormData(prev => ({...prev, purpose: checked ? value : (prev.purpose === 'Pozdrav' ? 'Zatraži ponudu' : 'Pozdrav')}));
+      setFormData(prev => ({...prev, purpose: value}));
     } else {
       setFormData(prev => ({...prev, [name]: value}));
     }
@@ -71,13 +72,32 @@ const ContactForm = () => {
             type="checkbox" 
             id="getQuote" 
             name="purpose" 
-            value="Zatraži ponudu" 
-            checked={formData.purpose === 'Zatraži ponudu'}
+            value="Zakaži besplatnu konsultaciju" 
+            checked={formData.purpose === 'Zakaži besplatnu konsultaciju'}
             onChange={handleChange}
             className="form-checkbox text-aquamarin-500" 
           />
-          <label htmlFor="getQuote" className="text-gray-700 font-medium">Zatraži ponudu</label>
+          <label htmlFor="getQuote" className="text-gray-700 font-medium">Zakaži besplatnu konsultaciju</label>
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="service" className="block text-gray-700 font-medium mb-2">Usluga*</label>
+        <select
+          id="service"
+          name="service"
+          value={formData.service}
+          onChange={handleChange}
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-aquamarin-500 transition duration-300"
+          required
+        >
+          <option value="">Izaberite uslugu</option>
+          <option value="Održavanje društvenih mreža">Održavanje društvenih mreža</option>
+          <option value="SEO">SEO</option>
+          <option value="Grafički i video dizajn">Grafički i video dizajn</option>
+          <option value="Sadržaj za sajt">Sadržaj za sajt</option>
+          <option value="Oglašavanje na društvenim mrežama">Oglašavanje na društvenim mrežama</option>
+        </select>
       </div>
 
       <div>
@@ -121,7 +141,7 @@ const ContactForm = () => {
         ></textarea>
       </div>
 
-      <input type="hidden" name="_subject" value="Nova prijava sa Ključna Reč Digital" />
+      <input type="hidden" name="_subject" value={`Nova prijava sa Ključna Reč Digital - ${formData.service}`} />
       <input type="text" name="_gotcha" style={{display: 'none'}} />
 
       <button type="submit" className="btn-primary w-full py-3 rounded-lg text-white font-medium hover:opacity-90 transition duration-300">Pošalji poruku</button>
