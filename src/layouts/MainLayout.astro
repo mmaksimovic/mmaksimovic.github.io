@@ -2,6 +2,7 @@
 import Footer from "../components/ui/Footer.astro";
 import Navbar from "../components/ui/Navbar.astro";
 import MainHead from "./MainHead.astro";
+import PlausibleAnalytics from '../components/PlausibleAnalytics.astro';
 
 const { title, description } = Astro.props;
 
@@ -16,6 +17,7 @@ const navLinks = [
 
 <html lang="en">
   <MainHead {title} {description} />
+  <PlausibleAnalytics domain="kljucnarec.rs" />
   <style>
     html.lenis {
       height: auto;
