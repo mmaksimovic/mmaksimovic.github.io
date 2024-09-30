@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: 'Kreativni video i vizuelni sadržaj: Kako male biznise izdvojiti na društvenim mrežama'
+title: 'Kako da odskočite od vaše konkurencije na društvenim mrežama uz vizuelni sadržaj'
 pubDate: 2024-09-29
 description: 'Saznajte zašto su personalizovani video i vizuelni sadržaji ključni za jačanje prisustva vašeg malog biznisa na društvenim mrežama.'
 image: 
