@@ -3,66 +3,46 @@ import SectionTitle from "../ui/SectionTitle.astro";
 import TeamCard from "../ui/TeamCard.astro";
 import Section from "./Section.astro";
 
-const description =
-  "Upoznajte naš iskusni tim";
+const description = "Upoznajte naš mali ali moćni tim";
 
 import p1 from "../../assets/pics/profile-pic.png";
-import p2 from "../../assets/pics/profile-pic.png";  
-import p3 from "../../assets/pics/profile-pic.png";
-import p4 from "../../assets/pics/profile-pic.png";
-import p5 from "../../assets/pics/profile-pic.png";
-import p6 from "../../assets/pics/profile-pic2.png"; // Maza
+import p2 from "../../assets/pics/profile-pic2.png"; // Maza
+import p3 from "../../assets/pics/profile-pic3.png";
+import p4 from "../../assets/pics/profile-pic4.png";
 
 const tim = [
   {
     pic: p1,
     name: "Milica Jovanović",
-    role: "Kreativni direktor",
+    role: "Stručnjak za društvene mreže i grafički dizajner",
     description:
-      "Odgovorna za osmišljavanje kreativnih koncepata i strategija. Razvijam inovativne ideje koje vaš brend izdvajaju iz mase. Sa mnom, vaša kampanja nikada neće biti dosadna!",
-    link: "https://www.linkedin.com/in/milica-jovanovi%C4%87-372693240/",
-  },
-  {
-    pic: p5,
-    name: "Milica Jovanović",
-    role: "Grafički dizajner i video editor",
-    description:
-      "Kreiram vizualne sadržaje koji pričaju vašu priču. Bilo da se radi o atraktivnim grafičkim dizajnima ili dinamičnim video montažama, osiguravam da vaša poruka bude preneta na upečatljiv i kreativan način.",
-    link: "https://www.linkedin.com/in/milica-jovanovi%C4%87-372693240/",
-  },
-  {
-    pic: p3,
-    name: "Milica Jovanović",
-    role: "Stručnjak za SEO",
-    description:
-      "Pomažem vašem sajtu da se probije na prvu stranicu pretrage. Optimizacija sadržaja i tehnički SEO su mi specijalnost — vaš online uspeh je moj prioritet.",
+      "Kreiram vizuelne sadržaje koji pričaju vašu priču i pomazem vam da privučete pažnju vaše publike na društvenim mrežama. Kreativni dizajn, dinamične kampanje i SEO optimizacija su moj glavni fokus.",
     link: "https://www.linkedin.com/in/milica-jovanovi%C4%87-372693240/",
   },
   {
     pic: p4,
-    name: "Milica Jovanović",
-    role: "Analitičar za društvene mreže",
+    name: "Katarina Andrejević",
+    role: "Madjioničar za pisanu reč",
     description:
-      "Pratim i analiziram performanse vaših društvenih mreža, pružajući uvid u ključne metrike i ponašanje publike. Koristeći podatke, razvijam strategije koje povećavaju angažovanje i optimizuju vaš prisustvo na mrežama.",
-  link: "https://www.linkedin.com/in/milica-jovanovi%C4%87-372693240/",
+      "Preko 10 godina iskustva u kreativnom pisanju i uredjivanju sadrzaja za web i newsletter-e.",
+    link: "https://www.linkedin.com/in/kandrejevic/",
   },
   {
-    pic: p5,
-    name: "Milica Jovanović",
-    role: "Stručnjak za oglašavanje",
+    pic: p3,
+    name: "Milica Maksimović",
+    role: "Strateg",
     description:
-      "Planiram i implementiram kampanje koje donose rezultate. Fokusirana sam na maksimizaciju povrata ulaganja (ROI) i kreiranje oglasa koji zaista dopiru do prave publike.",
-    link: "https://www.linkedin.com/in/milica-jovanovi%C4%87-372693240/",
+      "Biznis razvoj i marketing su njen glavni fokus. Kao strateg, ona pomaže klijentima da razumeju svoje klijente i konkurenciju, a zatim kreiraju efikasne marketing strategije.",
+    link: "https://www.linkedin.com/in/maksimovic-m/",
   },
   {
-  pic: p6,
-  name: "Maza",
-  role: "Kontrolor kvaliteta",
-  description:
-    "Nepogrešiva kada je reč o kvalitetu — ako nešto nije u skladu sa najvišim standardima, Maza reži na nas.",
-  link: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWloazYzdWZmb2NjcWpjeHZkbzdjeWtqMDNrZXd5NXFwcWx1MXZkdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y853jRq5TrMHVGn4nl/giphy.webp",
-}
-
+    pic: p2,
+    name: "Maza",
+    role: "Kontrolor kvaliteta i glavni motivator",
+    description:
+      "Nepogrešiva kada je reč o kvalitetu — ako nešto nije u skladu sa najvišim standardima, Maza reži na nas. Takođe, ona je stručnjak za podizanje morala tima i smanjenje stresa u kancelariji.",
+    link: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWloazYzdWZmb2NjcWpjeHZkbzdjeWtqMDNrZXd5NXFwcWx1MXZkdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y853jRq5TrMHVGn4nl/giphy.webp",
+  }
 ];
 ---
 
@@ -70,7 +50,7 @@ const tim = [
   <div class="mt-[140px]">
     <SectionTitle sectionTitle="Tim" description={description} />
     <div
-      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
     >
       {
         tim.map((member, index) => (
@@ -85,6 +65,6 @@ const tim = [
         ))
       }
     </div>
-  </br>
   </div>
+</br>
 </Section>
