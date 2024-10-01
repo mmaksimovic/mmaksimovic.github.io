@@ -18,7 +18,7 @@ const sortedPosts = allPosts.sort((a, b) => {
           <a href={post.url} class="block">
             <h2 class="text-2xl font-semibold mb-2 hover:text-aquamarin transition-colors">{post.frontmatter.title}</h2>
             <time datetime={post.frontmatter.pubDate} class="text-gray-600 block mb-2">
-              {new Date(post.frontmatter.pubDate).toLocaleDateString('sr-RS', { year: 'numeric', month: 'long', day: 'numeric' })}
+              {new Date(post.frontmatter.pubDate).toLocaleDateString('sr-Latn-RS', { year: 'numeric', month: 'long', day: 'numeric' })}
             </time>
             <p class="text-gray-700">{post.frontmatter.description}</p>
           </a>

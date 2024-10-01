@@ -32,7 +32,7 @@ if (frontmatter.image?.url) {
     <h1 class="text-4xl font-bold mb-6">{frontmatter.title}</h1>
     <div class="text-gray-600 mb-8">
       <time datetime={frontmatter.pubDate} class="mr-4">
-        {new Date(frontmatter.pubDate).toLocaleDateString('sr-RS', { year: 'numeric', month: 'long', day: 'numeric' })}
+        {new Date(frontmatter.pubDate).toLocaleDateString('sr-Latn-RS', { year: 'numeric', month: 'long', day: 'numeric' })}
       </time>
       <span>Autor: {frontmatter.author}</span>
     </div>
