@@ -5,5 +5,5 @@ export const get = () => rss({
   description: 'Your blog description',
   site: 'https://kljucnarec.rs',
   items: import.meta.glob('./blog/**/*.md'),
-  customData: `<language>sr-RS</language>`,
+  customData: `<language>sr-Latn-RS</language>`,
 });
