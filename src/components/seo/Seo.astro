@@ -5,8 +5,14 @@ import jsonLDGenerator from "../../utils/jsonLD";
 interface Props {
   title: string;
   description: string;
-  url?: URL;
-  image?: { src: string; alt: string; type?: string; width?: number; height?: number };
+  url?: URL | string;
+  image?: { 
+    src: string; 
+    alt: string; 
+    type?: string; 
+    width?: number; 
+    height?: number;
+  };
   robots?: boolean;
   frontmatter?: Record<string, unknown>;
 }
@@ -26,19 +32,19 @@ const defaultImage = import.meta.env.DEFAULT_IMAGE || siteData.image.src;
 const jsonLD = jsonLDGenerator({
   type: frontmatter ? "post" : "website",
   post: frontmatter,
-  url: url.toString(),
+  url: typeof url === 'string' ? url : url.toString(),
 });
 ---
 
 <!-- SEO -->
-<link rel="canonical" href={url} />
+<link rel="canonical" href={typeof url === 'string' ? url : url.toString()} />
 <meta name="description" content={description} />
 
 <!-- Open Graph -->
 <meta property="og:site_name" content={siteName} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:url" content={url} />
+<meta property="og:url" content={typeof url === 'string' ? url : url.toString()} />
 <meta property="og:image" content={image.src || defaultImage} />
 <meta property="og:image:url" content={image.src || defaultImage} />
 <meta property="og:image:secure_url" content={image.src || defaultImage} />
