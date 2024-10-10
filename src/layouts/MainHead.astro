@@ -2,7 +2,6 @@
 import Seo from "~/components/seo/Seo.astro";
 import { SITE } from "~/config.mjs";
 import Fonts from "~/components/common/Fonts.astro";
-import ExtraMetaTags from "~/components/common/ExtraMetaTags.astro";
 import PlausibleAnalytics from "~/components/PlausibleAnalytics.astro";
 
 const { src = "/favicon.ico" } = Astro.props;
@@ -36,8 +35,6 @@ const image =
   />
 
   <Fonts />
-
-  <ExtraMetaTags />
 
   <PlausibleAnalytics domain={SITE.domain} />
 
