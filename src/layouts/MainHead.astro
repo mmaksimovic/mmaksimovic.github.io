@@ -1,7 +1,6 @@
 ---
 import Seo from "../components/seo/Seo.astro";
 import siteData from '../data/siteData.json';
-import Fonts from "../components/common/Fonts.astro";
 import PlausibleAnalytics from "../components/PlausibleAnalytics.astro";
 
 const { src = "/favicon.ico" } = Astro.props;
@@ -33,8 +32,6 @@ const image =
       alt: title,
     }}
   />
-
-  <Fonts />
 
   <PlausibleAnalytics domain={siteData.url} />
 

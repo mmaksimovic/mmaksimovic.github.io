@@ -2,7 +2,7 @@
 import siteData from '../../data/siteData.json';
 import { getImage } from 'astro:assets';
 
-const { title = siteData.title, description = siteData.description, image = siteData.image, url, frontmatter, robots } = Astro.props;
+const { title = siteData.title, description = siteData.description, image = siteData.image, url, robots } = Astro.props;
 
 const ogImage = image?.src ? await getImage({src: image.src, width: 1200, height: 630}) : null;
 ---
