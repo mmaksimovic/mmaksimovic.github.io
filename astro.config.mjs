@@ -13,7 +13,8 @@ export default defineConfig({
     sitemap(),
     mdx()  // Change this line
   ],
-  content: {
-    sources: ['src/content']
-  }
+  // Commented out content section
+  // content: {
+  //   sources: ['src/content']
+  // }
 });
