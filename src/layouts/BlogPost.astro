@@ -3,6 +3,7 @@ import '../styles/globals.css';
 import '../styles/blog.css';
 import MainLayout from './MainLayout.astro';
 import { Image } from 'astro:assets';
+import Seo from '../components/seo/Seo.astro';  // Import the Seo component
 
 const { frontmatter } = Astro.props;
 
@@ -18,9 +19,23 @@ if (frontmatter.image?.url) {
     imageSource = (await imageModule()).default;
   }
 }
+
+// Prepare SEO image object
+const seoImage = imageSource ? {
+  src: imageSource.src,
+  alt: frontmatter.image.alt || frontmatter.title,
+  width: imageSource.width,
+  height: imageSource.height,
+} : undefined;
 ---
 
 <MainLayout title={frontmatter.title}>
+  <Seo
+    title={frontmatter.title}
+    description={frontmatter.description}
+    image={seoImage}
+    frontmatter={frontmatter}
+  />
   <article class="max-w-3xl mx-auto px-4 pt-32 pb-16"> <!-- Increased top padding -->
     {imageSource && (
       <Image 

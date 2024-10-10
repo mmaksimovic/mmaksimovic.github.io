@@ -1,68 +1,36 @@
 ---
-import siteData from "../../data/siteData.json";
-import jsonLDGenerator from "../../utils/jsonLD";
+import siteData from '../../data/siteData.json';
+import { getImage } from 'astro:assets';
 
-type Props = {
-  // Pass title and description for internal pages
-  // If not given, this defaults to site data
-  // Url is automatic
-  // Robots are optional
-  // Frontmatter triggers a CMS post type
-  title: string;
-  description: string;
-  url: string;
-  image?: { src: string; alt: string };
-  robots?: boolean;
-  frontmatter?: any;
-};
+const { title = siteData.title, description = siteData.description, image = siteData.image, url, robots } = Astro.props;
 
-const {
-  title,
-  description,
-  url = Astro.url,
-  image,
-  frontmatter,
-  robots,
-} = Astro.props;
-
-// Again, frontmatter triggers CMS post type
-const jsonLD = jsonLDGenerator({
-  type: frontmatter ? "post" : "website",
-  post: frontmatter,
-  url,
-});
+const ogImage = image?.src ? await getImage({src: image.src, width: 1200, height: 630}) : null;
 ---
 
-<!-- SEO -->
-<link rel="canonical" href={url} />
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
 
-<!-- Open Graph -->
-<meta property="og:site_name" content="Site Name" />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={url || siteData.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:url" content={url} />
-<meta property="og:image" content={image?.src || siteData.image.src} />
-<meta property="og:image:url" content={image?.src || siteData.image.src} />
-<meta
-  property="og:image:secure_url"
-  content={image?.src || siteData.image.src}
-/>
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="600" />
-<meta property="og:image:alt" content={image?.alt || siteData.image.alt} />
+{ogImage && <meta property="og:image" content={ogImage.src} />}
 
 <!-- Twitter -->
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content={image?.src || siteData.image.src} />
-<meta name="twitter:image:alt" content={title} />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={url || siteData.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+{ogImage && <meta property="twitter:image" content={ogImage.src} />}
 
-<!-- Using environment domain -->
-<meta name="twitter:domain" content={import.meta.env.SITE} />
+<!-- Language -->
+<meta property="og:locale" content={siteData.language} />
 
+<!-- Author -->
+<meta name="author" content={siteData.author.name} />
+
+<!-- Robots -->
 {robots && <meta name="robots" content="noindex, nofollow" />}
-
-<!-- JSON LD -->
-<Fragment set:html={jsonLD} />
