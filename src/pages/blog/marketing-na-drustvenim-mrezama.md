@@ -16,7 +16,7 @@ Hajde da budemo iskreni - privući pažnju na društvenim mrežama danas je tež
 
 Setite se samo koliko puta ste preskočili dosadnu reklamu ili generički post. A sad se setite onog videa koji vas je nasmejao ili slike koja vas je oduševila. E, to je moć kreativnog sadržaja!
 
-Kreativni video i slike nisu tu samo da budu lepi - oni pričaju priču o vašem brendu. To je kao da pozivate ljude na kafu i ćaskanje, umesto da im samo ubacite vizitkartu u ruke.
+Kreativni video i slike nisu tu samo da budu lepi - oni pričaju priču o vašem brendu. To je kao da pozivate ljude na razgovor, umesto da im samo ubacite vizitkartu u ruke.
 
 Na primer, zamislite da imate malu pekaru. Umesto običnih slika hleba, možete napraviti kratki video o tome kako mesite testo, ili time-lapse snimak kako se kifle peku i dižu u rerni. To nije samo sadržaj - to je doživljaj koji ljudi pamte.
 
@@ -36,5 +36,5 @@ Zato mi ne stvaramo samo lepe slike i videe, već sadržaj koji pokreće razgovo
 
 Ako želite da vaš mali biznis bude primećen na društvenim mrežama, ključ je u kreativosti. **Agencija Ključna Reč** vam može pomoći da kroz video, slike i ostale vizuelne formate izgradite prepoznatljivost i povezanost sa svojom publikom. 
 
-Ne ustručavajte se da nas pozovete na kafu (ili rakiju) - obećavamo da nećemo samo pričati o poslu, ali ćemo sigurno smisliti nešto kreativno za vaš brend!
+Ne ustručavajte se da nas pozovete na kafu - obećavamo da nećemo samo pričati o poslu, ali ćemo sigurno smisliti nešto kreativno za vaš brend!
 
