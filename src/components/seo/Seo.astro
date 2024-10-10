@@ -1,31 +1,36 @@
 ---
-import Seo from "../components/seo/Seo.astro";
+import siteData from '../../data/siteData.json';
+import { getImage } from 'astro:assets';
 
-// Pass the contents to create SEO for the page
-const { title, description, image, frontmatter, robots } = Astro.props;
+const { title = siteData.title, description = siteData.description, image = siteData.image, url, frontmatter, robots } = Astro.props;
+
+const ogImage = image?.src ? await getImage({src: image.src, width: 1200, height: 630}) : null;
 ---
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
 
-  <!-- iOS 
-  <link rel="apple-touch-icon" sizes="256x256" href="/path/to/your/icon.png" />
-  -->
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={url || siteData.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+{ogImage && <meta property="og:image" content={ogImage.src} />}
 
-  <title>{title}</title>
-  <meta name="description" content={description} />
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={url || siteData.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+{ogImage && <meta property="twitter:image" content={ogImage.src} />}
 
-  <Seo
-    {title}
-    {description}
-    url={Astro.url.toString()}
-    {image}
-    {frontmatter}
-    {robots}
-  />
+<!-- Language -->
+<meta property="og:locale" content={siteData.language} />
 
-  <!-- Preconnect fonts, images... -->
-</head>
+<!-- Author -->
+<meta name="author" content={siteData.author.name} />
+
+<!-- Robots -->
+{robots && <meta name="robots" content="noindex, nofollow" />}

@@ -1,15 +1,15 @@
 ---
-import Seo from "~/components/seo/Seo.astro";
-import { SITE } from "~/config.mjs";
-import Fonts from "~/components/common/Fonts.astro";
-import PlausibleAnalytics from "~/components/PlausibleAnalytics.astro";
+import Seo from "../components/seo/Seo.astro";
+import siteData from '../data/siteData.json';
+import Fonts from "../components/common/Fonts.astro";
+import PlausibleAnalytics from "../components/PlausibleAnalytics.astro";
 
 const { src = "/favicon.ico" } = Astro.props;
 
 const {
-  title = SITE.name,
-  description = "",
-  image: defaultImage = SITE.defaultImage,
+  title = siteData.title,
+  description = siteData.description,
+  image: defaultImage = siteData.image,
   canonical,
 } = Astro.props;
 
@@ -36,7 +36,7 @@ const image =
 
   <Fonts />
 
-  <PlausibleAnalytics domain={SITE.domain} />
+  <PlausibleAnalytics domain={siteData.url} />
 
   {
     /* 
