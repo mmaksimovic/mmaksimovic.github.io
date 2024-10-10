@@ -1,72 +1,31 @@
 ---
-import siteData from "../../data/siteData.json";
-import jsonLDGenerator from "../../utils/jsonLD";
+import Seo from "../components/seo/Seo.astro";
 
-interface Props {
-  title: string;
-  description: string;
-  url?: URL | string;
-  image?: { 
-    src: string; 
-    alt: string; 
-    type?: string; 
-    width?: number; 
-    height?: number;
-  };
-  robots?: boolean;
-  frontmatter?: Record<string, unknown>;
-}
-
-const {
-  title,
-  description,
-  url = Astro.url,
-  image = siteData.image,
-  frontmatter,
-  robots,
-} = Astro.props;
-
-const siteName = import.meta.env.SITE_NAME || "Site Name";
-const defaultImage = import.meta.env.DEFAULT_IMAGE || siteData.image.src;
-
-const jsonLD = jsonLDGenerator({
-  type: frontmatter ? "post" : "website",
-  post: frontmatter,
-  url: typeof url === 'string' ? url : url.toString(),
-});
+// Pass the contents to create SEO for the page
+const { title, description, image, frontmatter, robots } = Astro.props;
 ---
 
-<!-- SEO -->
-<link rel="canonical" href={typeof url === 'string' ? url : url.toString()} />
-<meta name="description" content={description} />
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-<!-- Open Graph -->
-<meta property="og:site_name" content={siteName} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:url" content={typeof url === 'string' ? url : url.toString()} />
-<meta property="og:image" content={image.src || defaultImage} />
-<meta property="og:image:url" content={image.src || defaultImage} />
-<meta property="og:image:secure_url" content={image.src || defaultImage} />
-<meta property="og:image:type" content={image.type || "image/jpeg"} />
-<meta property="og:image:width" content={image.width?.toString() || "1200"} />
-<meta property="og:image:height" content={image.height?.toString() || "630"} />
-<meta property="og:image:alt" content={image.alt || title} />
+  <!-- iOS 
+  <link rel="apple-touch-icon" sizes="256x256" href="/path/to/your/icon.png" />
+  -->
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
 
-<!-- Twitter -->
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content={image.src || defaultImage} />
-<meta name="twitter:image:alt" content={image.alt || title} />
-<meta name="twitter:domain" content={import.meta.env.SITE} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
 
-{robots && <meta name="robots" content="noindex, nofollow" />}
+  <Seo
+    {title}
+    {description}
+    url={Astro.url.toString()}
+    {image}
+    {frontmatter}
+    {robots}
+  />
 
-<!-- JSON LD -->
-<Fragment set:html={jsonLD} />
-
-<!-- Additional SEO tags -->
-<meta name="author" content={siteName} />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="generator" content={Astro.generator} />
+  <!-- Preconnect fonts, images... -->
+</head>
